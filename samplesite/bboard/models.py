@@ -1,10 +1,19 @@
 from django.db import models
 
+class Rublic(models.Model):
+    name = models.CharField(max_length=20, db_index=True, verbose_name='Название')
+
+    class Meta:
+        verbose_name_plural = 'Рублики'
+        verbose_name = 'Рублика'
+        ordering = ['name']
+
 class Bb(models.Model):
     title = models.CharField(max_length=50, verbose_name='Товар')
     content = models.TextField(null=True, blank=True, verbose_name='Описание')
     price = models.FloatField(null=True, blank=True, verbose_name='Цена')
     published = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name='Опубликовано')
+    rublic = models.ForeignKey('Rublic', null=True, on_delete=models.PROTECT, verbose_name='Рублика')
 
     class Meta:
         verbose_name_plural = 'Объявления'
