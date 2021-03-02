@@ -7,7 +7,6 @@ def index(request):
  rublics = Rublic.objects.all()
  context = {'bbs': bbs, 'rublics': rublics}
  return render(request, 'bboard/index.html', context)
- return render(request, 'bboard/index.html', {'bbs': bbs})
 
 def by_rublic(request, rublic_id):
  bbs = Bb.objects.filter(rublic=rublic_id)

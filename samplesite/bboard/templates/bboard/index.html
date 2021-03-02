@@ -9,14 +9,14 @@
     <div>
         <a href="/bboard/">Главная</a>
         {% for rublic in rublics %}
-        <a href="/bboard/{{ rublic.pk }}">{{ rublic.name }}</a>
+        <a href="/bboard/{{ rublic.pk }}/">{{ rublic.name }}</a>
         {% endfor %}
     </div>
     {% for bb in bbs %}
     <div>
         <h2>{{ bb.title }}</h2>
         <p>{{ bb.content }}</p>
-        <p><a href="/bboard/{{ rublic.pk }}">{{ rublic.name }}</a></p>
+        <p><a href="/bboard/{{ bb.rublic.pk }}/">{{ bb.rublic.name }}</a></p>
         <p>{{ bb.published|date:"d.m.Y H:i:s" }}</p>
     </div>
     {% endfor %}
