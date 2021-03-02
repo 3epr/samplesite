@@ -16,8 +16,9 @@ Including another URLconf
 
 from django.urls import path
 
-from .views import index
+from .views import index, by_rublic
 
 urlpatterns = [
-    path('', index,),
+    path('<int:rublic_id>/', by_rublic),
+    path('', index),
 ]
