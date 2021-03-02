@@ -1,7 +1,9 @@
 from django.shortcuts import render
 
-from .models import Bb
+from .models import Bb, Rublic
 
 def index(request):
  bbs = Bb.objects.all()
- return render(request, 'bboard/index.html', {'bbs': bbs})
+ rublics = Rublic.objects.all()
+ context = {'bbs': bbs, 'rublics': rublics}
+ return render(request, 'bboard/index.html', context)
