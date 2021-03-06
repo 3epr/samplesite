@@ -12,6 +12,7 @@
         <a href="{% url 'index' %}">Главная</a>
         {% for rublic in rublics %}
         <a href="{% url 'by_rublic' rublic.pk %}">{{ rublic.name }}</a>
+        {% endfor %}
         <a href="{% url 'add' %}">Добавить</a>
     </nav>
     <section>

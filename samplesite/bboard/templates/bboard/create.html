@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Добавдение объявления :: Доска объявлений</title>
-</head>
-<body>
-    <h1>Добавление объяления</h1>
-    <div>
-        <a href="{% url 'index' %}">Главная</a>
-        {% for rublic in rublics %}
-        <a href="{% url 'by_rublic' rublic.pk %}">{{ rublic.name }}</a>
-        {% endfor %}
-    </div>
+{% extends "layout/basic.html" %}
+
+{% block title %}Добавление объяления{% endblock %}
+
+{% block content %}
+<h2>Добавление объяления</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Добавиить">
     </form>
-</body>
-</html>
+{% endblock %}
