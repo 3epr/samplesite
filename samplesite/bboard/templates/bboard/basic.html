@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Главная{% endblock %} :: Доска объялений</title>
+</head>
+<body>
+    <header>
+        <h1>Объявления</h1>
+    </header>
+    <nav>
+        <a href="{% url 'index' %}">Главная</a>
+        {% for rublic in rublics %}
+        <a href="{% url 'by_rublic' rublic.pk %}">{{ rublic.name }}</a>
+        <a href="{% url 'add' %}">Добавить</a>
+    </nav>
+    <section>
+        {% block content %}
+        {% endblock %}
+    </section>
+</body>
+</html>
