@@ -16,9 +16,10 @@ Including another URLconf
 
 from django.urls import path
 
-from .views import index, by_rublic
+from .views import index, by_rublic, BbCreateView
 
 urlpatterns = [
+    path('add/', BbCreateView.as_view(), name='add'),
     path('<int:rublic_id>/', by_rublic, name='by_rublic'),
     path('', index, name='index'),
 ]

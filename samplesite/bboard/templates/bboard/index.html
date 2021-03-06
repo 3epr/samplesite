@@ -11,6 +11,7 @@
         {% for rublic in rublics %}
         <a href="{% url 'by_rublic' rublic.pk %}">{{ rublic.name }}</a>
         {% endfor %}
+        <a href="{% url 'add' %}">Добавить</a>
     </div>
     {% for bb in bbs %}
     <div>

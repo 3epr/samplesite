@@ -1,4 +1,4 @@
-from django.models import ModelForm
+from django.forms import ModelForm
 
 from .models import Bb
 
